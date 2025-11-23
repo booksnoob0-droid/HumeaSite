@@ -1,0 +1,13 @@
+{
+  "name": "duck-proxy",
+  "version": "1.0.0",
+  "description": "Simple DuckDuckGo-backed web proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "node-fetch": "^2.7.0"
+  }
+}
