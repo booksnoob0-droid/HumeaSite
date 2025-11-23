@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background: radial-gradient(circle at top, #171c2b 0, #05060a 55%, #020308);
+  color: #f5f5ff;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 12px;
+}
+
+.header {
+  padding: 10px 12px 8px;
+  background: rgba(7, 10, 20, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.logo-icon {
+  font-size: 22px;
+}
+
+.logo-text {
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: #a8aec7;
+}
+
+.subtitle code {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 9px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(12, 16, 30, 0.95);
+  color: #f5f5ff;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: #7b82a1;
+}
+
+.search-bar input:focus {
+  border-color: #60e0ff;
+  box-shadow: 0 0 0 1px rgba(96, 224, 255, 0.4);
+}
+
+.search-bar button {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #60e0ff, #78f7bc);
+  color: #020308;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.08s ease, box-shadow 0.08s ease,
+    filter 0.08s ease;
+}
+
+.search-bar button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.75);
+}
+
+.search-bar button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
+}
+
+.main {
+  flex: 1;
+  margin-top: 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+}
+
+#proxy-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #05060a;
+}
