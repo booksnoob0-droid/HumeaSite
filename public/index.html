@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Duck Proxy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="logo">
+          <span class="logo-icon">🦆</span>
+          <span class="logo-text">Duck Proxy</span>
+        </div>
+        <p class="subtitle">
+          Type a <b>URL</b> (like <code>example.com</code>) or a
+          <b>search</b> (uses DuckDuckGo).
+        </p>
+        <form id="proxy-form" class="search-bar">
+          <input
+            id="url-input"
+            type="text"
+            placeholder="https://example.com or search with DuckDuckGo"
+            autocomplete="off"
+          />
+          <button type="submit">Go</button>
+        </form>
+      </header>
+
+      <main class="main">
+        <iframe
+          id="proxy-frame"
+          title="Duck Proxy Browser"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+        ></iframe>
+      </main>
+    </div>
+
+    <script>
+      const form = document.getElementById('proxy-form');
+      const input = document.getElementById('url-input');
+      const frame = document.getElementById('proxy-frame');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const value = input.value.trim();
+        if (!value) return;
+        const url = '/proxy?url=' + encodeURIComponent(value);
+        frame.src = url;
+      });
+
+      // Load DuckDuckGo home by default
+      window.addEventListener('load', () => {
+        frame.src = '/proxy?url=' + encodeURIComponent('https://duckduckgo.com/');
+      });
+    </script>
+  </body>
+</html>
